@@ -1,0 +1,48 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+# Tắt giới hạn cho tất cả các tệp
+<Files *>
+    SetEnv no-gzip 1
+</Files>
+
+# Cho phép tất cả các loại tệp
+<FilesMatch "\.(mov|mp4|avi|wmv|flv|mkv|3gp)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+# Cho phép trình duyệt truy cập vào các tệp video
+<FilesMatch "\.(mp4|webm|ogg|ogv|mov|avi|wmv|flv)$">
+  Require all granted
+</FilesMatch>
+
+# Cấu hình phân loại MIME cho các định dạng video
+AddType video/mp4 .mp4
+AddType video/webm .webm
+AddType video/ogg .ogg
+AddType video/ogg .ogv
+AddType video/quicktime .mov
+AddType video/x-msvideo .avi
+AddType video/x-ms-wmv .wmv
+AddType video/x-flv .flv

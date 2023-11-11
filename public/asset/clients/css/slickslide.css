@@ -1,0 +1,124 @@
+.top-movie {
+    z-index: 11;
+}
+
+.top-movie button {
+    z-index: 11;
+    font-size: 2vw;
+    height: 100%;
+    width: 3.7vw;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s;
+    color: whitesmoke;
+}
+
+.top-movie button:hover {
+    font-size: 3.1vw;
+    background-color: rgba(197, 193, 191, 0.3);
+    transition: 0.3s;
+    color: black;
+
+
+}
+
+/* 
+.top-movie {
+    width: 100% !important;
+}
+
+.top-movie .top-rank {
+    width: 25% !important;
+} */
+
+
+
+.slick-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slick-next {
+    right: 0px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slick-list {
+    padding: 0 4%;
+}
+
+.top-movie .top-rank {
+    margin: 0 4px;
+}
+
+.top-movie .top-rank .boxart-size {
+    height: 0px;
+    overflow: hidden;
+    padding: 35.714285714% 0;
+    position: relative;
+    width: 100%;
+    border-radius: .2vw;
+}
+
+.top-movie .top-rank .boxart-size .svg-icon {
+    border: 1px solid transparent;
+    margin: 0 -1px;
+    overflow: visible;
+    transform: scale(1);
+}
+
+.top-movie .top-rank .boxart-size .top-10-rank {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: auto;
+    top: 0;
+    width: 50%;
+}
+
+.top-movie .top-rank .boxart-size img {
+    bottom: 0;
+    height: 100%;
+    left: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+}
+
+.top-movie .movie {
+    margin: 0 4px;
+}
+
+.top-movie .movie .boxart-size img {
+    bottom: 0;
+    height: 100%;
+    left: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.top-movie .movie .boxart-size {
+    bottom: 0;
+    left: 0;
+    /* position: absolute; */
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    /* width: 100%; */
+    padding: 28.125% 0;
+
+}

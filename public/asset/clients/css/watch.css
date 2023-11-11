@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    overflow: hidden;
+}
+
+button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    margin: 0 7px;
+    outline: none;
+}
+
+div {
+    color: white;
+}
+
+
+.player {
+    width: auto;
+}
+
+.player__controls {
+    position: absolute;
+    margin-top: -35px;
+    z-index: 0;
+    width: 500px;
+    background-color: #38393a;
+}
+
+.back {
+    cursor: pointer;
+}
+
+.progresss {
+    height: 8px;
+    width: 100%;
+    background-color: #838383;
+    cursor: w-resize;
+}
+
+.progresss__filled {
+    height: 100%;
+    background-color: #5a5656;
+}
+
+.rewind,
+.fast {
+    transition: 0.4s;
+}
+
+
+.rewind:hover {
+    rotate: -45deg;
+}
+
+.fast:hover {
+    rotate: 45deg;
+}
+
+.player__controlsbottom {
+    display: flex;
+    align-items: center;
+}
+
+.volume-on {
+    display: flex;
+}
+
+.player__slider {
+    width: 0;
+    transition: 0.5s;
+    opacity: 0;
+}

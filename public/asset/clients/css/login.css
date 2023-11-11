@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body,
+html {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg-img {
+    width: 7000px;
+    height: 100vh;
+    transform: rotateX(-23deg) rotateY(50deg) rotateZ(20deg) translate(-50%, 0);
+    transform-origin: center;
+    animation: slideImage 300s linear infinite;
+    filter: opacity(0.5);
+}
+
+.item {
+    height: 200px;
+    flex: 0 4%;
+    margin: 5px;
+}
+
+.item img {
+    width: -webkit-fill-available;
+    height: 100%;
+}
+
+@keyframes slideImage {
+    0% {
+        transform: rotateX(-23deg) rotateY(50deg) rotateZ(20deg) translate(-50%, 0%);
+    }
+
+    25% {
+        transform: rotateX(-23deg) rotateY(50deg) rotateZ(20deg) translate(-75%, 0%);
+    }
+
+    50% {
+        transform: rotateX(-23deg) rotateY(50deg) rotateZ(20deg) translate(-100%, 0%);
+    }
+
+    75% {
+        transform: rotateX(-23deg) rotateY(50deg) rotateZ(20deg) translate(-125%, 0%);
+    }
+
+    100% {
+        transform: rotateX(-23deg) rotateY(50deg) rotateZ(20deg) translate(-150%, 0%);
+    }
+}
+
+.form-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px;
+    background-color: rgba(0, 0, 0, .75);
+    width: 500px;
+    border-radius: .5rem;
+    color: white;
+}
+
+/* .form-login div {
+    margin: 1rem 0;
+} */
+
+.form-login input {
+    width: -webkit-fill-available;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.btnLogin {
+    background-color: #e50914;
+    color: white;
+    font-weight: bold;
+}
+
+.checkbox {
+    width: unset !important;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.btn-gg:hover {
+    background-color: #2b2b2b;
+}
