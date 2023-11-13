@@ -27,7 +27,7 @@
     <hr>
     <div class="movies-list">
         <h2 class="title-content">
-            <a class="skeleton" href="#">Hiện đang thịnh hành</a>
+            <a class="skeleton text-light" href="#">Gợi ý cho bạn</a>
         </h2>
         <div class="top-movie">
             @foreach ($suggest as $popular)

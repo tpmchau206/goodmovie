@@ -26,10 +26,6 @@ class User extends Model
         $user = DB::table($this->user)
             ->where('email', $email)
             ->first();
-        // $check = ($password == $user->password);
-
-
-        // dd($check);
         return $user;
     }
 

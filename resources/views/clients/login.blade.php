@@ -49,12 +49,22 @@
                 </p>
             </div>
             <hr>
-            <div class="text-center">
+            <div class="text-center mb-3">
                 <a href="{{ route('user.loginGoogle') }}" class="text-decoration-none">
                     <div class="border rounded-2 d-flex align-items-center btn-gg">
                         <img class="" src="{{ asset('asset/clients/images/logo/7611770.png') }}" width="60"
                             alt="">
                         <span class="ms-5 fw-semibold text-light">Đăng nhập với Google</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mb-3">
+                <a href="http://localhost:8000/login/facebook" class="text-decoration-none">
+                    <div class="border rounded-2 d-flex align-items-center btn-gg">
+                        <img class="" src="{{ asset('asset/clients/images/logo/logoFB.png') }}" width="60"
+                            alt="">
+                        <span class="ms-5 fw-semibold text-light">Đăng nhập với FaceBook</span>
                     </div>
                 </a>
             </div>

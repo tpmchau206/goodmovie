@@ -115,11 +115,6 @@ class UserController extends Controller
         } else {
             return back()->with('msg', 'Tài khoản bạn đăng ký đã tồn tại.');
         }
-
-        // $password = bcrypt($request->password);
-
-        // dd($dataRegister);
-        // return $validator;
     }
 
     public function getLogout()
@@ -139,7 +134,7 @@ class UserController extends Controller
     public function postForgetPass(Request $request)
     {
         $rules = [
-            'email' => ['required', 'email', 'exists:user'],
+            'email' => ['required', 'email', 'exists:users'],
         ];
         $messages = [
             'required' => 'Vui lòng nhập :attribute.',
@@ -229,6 +224,44 @@ class UserController extends Controller
         $user = Socialite::driver('google')->user();
         $checkUser = $this->user->getUserLogin($user->getEmail());
         // dd($checkUser);
+        if ($checkUser == null) {
+            $dataRegister = [
+                'username' => $user->getName(),
+                'email' => $user->getEmail(),
+                'status' => 1,
+                'group_id' => 2,
+                'create_at' => date('Y-m-d H:i:s'),
+            ];
+            $this->user->registerUser($dataRegister);
+            $user = $this->user->getUserLogin($user->getEmail());
+
+            // dd($this->user);
+            session()->put([
+                'id' => $user->id,
+                'username' => $user->username
+            ]);
+            return redirect()->route('index.home');
+        } else {
+            $user = $this->user->getUserLogin($user->getEmail());
+            session()->put([
+                'id' => $user->id,
+                'username' => $user->username
+            ]);
+            return redirect()->route('index.home');
+        }
+    }
+
+    public function getLoginFaceBook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function getLoginFaceBookCallBack()
+    {
+
+        $user = Socialite::driver('facebook')->user();
+        // dd($user);
+        $checkUser = $this->user->getUserLogin($user->getEmail());
         if ($checkUser == null) {
             $dataRegister = [
                 'username' => $user->getName(),

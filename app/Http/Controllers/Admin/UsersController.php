@@ -34,14 +34,14 @@ class UsersController extends Controller
                 $status = 0;
             }
 
-            $filters[] = ['user.status', '=', $status];
+            $filters[] = ['users.status', '=', $status];
         }
 
         if (!empty($request->group_id)) {
             $groupId = $request->group_id;
 
 
-            $filters[] = ['user.group_id', '=', $groupId];
+            $filters[] = ['users.group_id', '=', $groupId];
         }
         // dd($filters);
         if (!empty($request->keywords)) {

@@ -376,25 +376,8 @@ section-2 .main .movies-series .movies-list {
     margin-left: 4px;
 }
 
-.title-content a {
-    color: white !important;
-
-}
-
 .modal-content {
     background-color: #272727;
-}
-
-.modal-header {
-    border-bottom: none;
-}
-
-.modal-body {
-    padding: 0;
-}
-
-.modal-footer {
-    border-top: none;
 }
 
 #videoTrailer {

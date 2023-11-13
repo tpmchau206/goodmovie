@@ -18,6 +18,11 @@ window.addEventListener('load', function () {
 
 // })
 
+// const navbarToggler = document.querySelector('.navbar-toggler')
+// navbarToggler.onclick = function () {
+
+// }
+
 $(window).scroll(function () {
     if ($(this).scrollTop() > 0) {
         $('.navbar').addClass('swapnavbar');
@@ -30,8 +35,9 @@ $(window).scroll(function () {
 
 
 $(document).ready(function () {
-    $(".navbar-togglerr").click(function () {
+    $(".navbar-toggler").click(function () {
         $(".navbar-collapse").collapse('toggle');
+        // console.log('adsda');
     });
 });
 
@@ -64,7 +70,7 @@ function toggleRefresh() {
 function updatebtnPlay() {
     if (video.paused) {
         btnPlay = '<i class="bx bx-play"></i>';
-        $('.left .title').css('font-size', '5.5vw');
+        $('.left .title').css('font-size', '4.5vw');
         $('.left .title').css('transition', '1s');
         $('.left .title').css('transition-delay', '1s');
         $('.left .content').css('font-size', '1.2vw');
@@ -104,7 +110,7 @@ function toggleMute() {
 }
 function checkVideo1() {
     btnPlay = '<i class="bx bx-play"></i>';
-    $('.left .title').css('font-size', '5.5vw');
+    $('.left .title').css('font-size', '4.5vw');
     $('.left .title').css('transition', '1s');
     $('.left .title').css('transition-delay', '5s');
     $('.left .content').css('transition-delay', '5s');
@@ -132,7 +138,7 @@ video.addEventListener('loadstart', checkVideo1)
 video.addEventListener('play', updatebtnPlay)
 video.addEventListener('pause', updatebtnPlay)
 video.addEventListener("ended", function () {
-    $('.left .title').css('font-size', '5.5vw');
+    $('.left .title').css('font-size', '4.5vw');
     $('.left .title').css('transition', '1s');
     $('.left .title').css('transition-delay', 'font-size', '1.2vw');
     $('.left .content').css('transition', '1s');
@@ -152,7 +158,6 @@ const popup = document.querySelector('.modal-content')
 document.addEventListener('click', function (event) {
     if (!popup.contains(event.target)) {
         if ($('#infoMovie').is(':visible')) {
-            console.log('ngoai');
             videoTrailer.pause();
             video.play();
             updatebtnPlay();
@@ -166,29 +171,4 @@ document.addEventListener('click', function (event) {
 
 });
 
-// const close = document.querySelector('.close-popup')
-// close.addEventListener('click', function () {
-//     $('.popup').collapse('hide');
-// });
-// const infoMovie = document.querySelector('#infoMovie')
-// infoMovie.addEventListener('click', function () {
-//     if (infoMovie.css('display') === 'block') {
-//         console.log('open');
-//         video.pause();
-//         updatebtnPlay();
-//     } else {
-//         console.log('close');
-
-//     }
-// })
-
-
-// function miniView() {
-//     $('.mini-view').css('font-size', '5.5vw');
-
-// }
-// miniView.addEventListener('load', checkVideo2)
-
 video.load();
-
-

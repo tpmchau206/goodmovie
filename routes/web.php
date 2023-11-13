@@ -44,6 +44,10 @@ Route::middleware('auth.check.login')->prefix('/')->name('user.')->group(functio
     Route::get('/login/google', [UserController::class, 'getLoginGoogle'])->name('loginGoogle');
     Route::get('/login/google/callback', [UserController::class, 'getLoginGoogleCallBack']);
 
+    Route::get('/login/facebook', [UserController::class, 'getLoginFaceBook'])->name('loginFaceBook');
+
+    Route::get('/login/facebook/callback', [UserController::class, 'getLoginFaceBookCallBack']);
+
     Route::get('/register', [UserController::class, 'getRegister'])->name('register');
     Route::post('/register', [UserController::class, 'postRegister'])->name('post-register');
 

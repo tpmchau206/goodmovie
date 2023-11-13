@@ -28,7 +28,7 @@ class UserRequest extends FormRequest
 
         if (session('id')) {
             $id = session('id');
-            $uniqueEmail = 'unique:user,email,' . $id;
+            $uniqueEmail = 'unique:users,email,' . $id;
         }
 
         return [

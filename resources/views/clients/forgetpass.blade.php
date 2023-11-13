@@ -12,9 +12,9 @@
             </a>
         </div>
         <div class="form-login">
-            <h1 class="text-center">Quên mật khẩu</h1>
+            <h1 class="text-center mb-3">Quên mật khẩu</h1>
             <form action="{{ route('user.post-forgetPass') }}" method="post" id="login-form">
-                <div>
+                <div class="mb-3">
                     <input type="text" name="email" placeholder="Email hoặc số điện thoại" value="{{ old('email') }}">
                     @error('email')
                         <p class="email_error error">{{ $message }}</p>
@@ -22,10 +22,10 @@
                 </div>
 
                 @csrf
-                <div>
+                <div class="mb-3">
                     <input type="submit" value="Gửi cho tôi email" class="btnChange btnLogin">
                 </div>
-                <div class="msg_time text-center" style="display: block"> s</div>
+                <div class="msg_time text-center" style="display: block"></div>
                 {{-- @if (session('msg')) --}}
                 <p class="error msg text-center" style=" "></p>
                 {{-- @endif --}}
@@ -66,6 +66,7 @@
 
                         // btnChange.onclick = function() {
                         $('.btnChange').prop('disabled', true)
+                        $('.btnChange').css('background-color', 'rgba(120, 120, 120,0.8)')
                         var seconds = 60; // Thời gian đếm ngược trong giây
                         var countdown = setInterval(function() {
                             $('.msg_time').text("Gửi lại sau " +
@@ -76,6 +77,9 @@
                                 clearInterval(countdown);
                                 $('.msg_time').text("");
                                 $('.btnChange').prop('disabled', false)
+                                $('.btnChange').css('background-color',
+                                    '#e50914')
+
                             }
                         }, 1000); // Mỗi giây
                         // }
@@ -83,6 +87,7 @@
                     },
                     error: function(error, e) {
                         let responseJSON = error.responseJSON.errors;
+                        console.log(error);
                         $('.msg').show();
                         if (Object.keys(responseJSON.length > 0)) {
                             for (let key in responseJSON) {
